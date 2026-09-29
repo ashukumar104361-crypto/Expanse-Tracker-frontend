@@ -75,7 +75,12 @@ frontend/
    ```bash
    cp .env.example .env
    ```
-   Ensure `VITE_API_URL` points to your backend (default: `http://localhost:5000/api`).
+   Ensure `VITE_API_URL` points to your backend API (default: `http://localhost:5000/api`).
+   For Vercel, add it under **Project Settings → Environment Variables**, for example:
+   ```env
+   VITE_API_URL=https://your-backend-domain.com/api
+   ```
+   The frontend also accepts the backend domain without `/api` and adds the API prefix automatically.
 
 3. **Start Development Server:**
    ```bash
