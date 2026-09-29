@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
-import { Wallet, LogIn, AlertCircle, Sparkles } from 'lucide-react';
+import { Wallet, LogIn, AlertCircle } from 'lucide-react';
 
 export const Login = () => {
   const [email, setEmail] = useState('');
@@ -28,11 +28,6 @@ export const Login = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleDemoLogin = () => {
-    setEmail('ashu@example.com');
-    setPassword('password123');
   };
 
   return (
@@ -95,17 +90,6 @@ export const Login = () => {
             <span>{loading ? 'Logging in...' : 'Sign In'}</span>
           </button>
         </form>
-
-        <div className="demo-credentials-banner">
-          <div className="demo-header">
-            <Sparkles size={16} className="text-amber" />
-            <span>Quick Test Demo Account</span>
-          </div>
-          <p className="demo-text">Email: <code>ashu@example.com</code> | Password: <code>password123</code></p>
-          <button type="button" onClick={handleDemoLogin} className="btn-demo-fill">
-            Fill Demo Credentials
-          </button>
-        </div>
 
         <div className="auth-footer-prompt">
           Don't have an account?{' '}
